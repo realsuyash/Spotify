@@ -896,3 +896,39 @@ video {
     width: 8rem;
   }
 }
+
+#player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#prev-btn, #next-btn {
+  position: fixed;
+  top: 10px; /* Distance from the top of the viewport */
+  z-index: 1000; /* Ensures buttons stay on top */
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  background-color: #01a22c;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Positioning for individual buttons */
+#prev-btn {
+  left: 270px; /* Distance from the left */
+}
+
+#next-btn {
+  right: 10px; /* Distance from the right */
+}
+
+#prev-btn:hover, #next-btn:hover {
+  background-color: #008f0c; /* Darker shade on hover */
+}
