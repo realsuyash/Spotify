@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Suyash</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,10 @@
 </style>
 
 <body class="bg-black font-kanit text-white">
-    
+    <div id="player-controls" class="text-center mt-5">
+        <button id="prev-btn" class="px-4 py-2 bg-green-400 rounded text-white font-bold hover:bg-green-700">Previous</button>
+        <button id="next-btn" class="px-4 py-2 bg-green-400 rounded text-white font-bold hover:bg-green-700">Next</button>
+    </div>
     <div class="mb-5">
         <div class="w-14 ml-10 mt-4">
             <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png" alt="">
@@ -326,4 +329,22 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        const audioElements = document.querySelectorAll('audio');
+        let currentAudioIndex = 0;
+    
+        document.getElementById('next-btn').addEventListener('click', () => {
+            audioElements[currentAudioIndex].pause();
+            currentAudioIndex = (currentAudioIndex + 1) % audioElements.length;
+            audioElements[currentAudioIndex].play();
+        });
+    
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            audioElements[currentAudioIndex].pause();
+            currentAudioIndex =
+                (currentAudioIndex - 1 + audioElements.length) % audioElements.length;
+            audioElements[currentAudioIndex].play();
+        });
+    </script>
     
